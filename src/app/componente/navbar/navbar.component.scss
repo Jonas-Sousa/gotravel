@@ -1,0 +1,19 @@
+.navbar-content{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-left: 3rem;
+  padding-top: 2rem;
+  color: white;
+  .nav-links{
+    display: flex;
+    gap: 2rem;
+    margin-right: 3rem;
+    li a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
