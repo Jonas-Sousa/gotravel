@@ -2,13 +2,10 @@
 export const content = ["./src/**/*.{html,js}"];
 export const theme = {
   extend: {
-    backgroundImage: {
-      'card': "url('/assets/images/rjteste.jpg')",
-    }
   },
   fontSize: {
     sm: '1rem',
-    md: '2rem',
+    md: '1.5rem',
     xl: '4rem',
   }
 };
