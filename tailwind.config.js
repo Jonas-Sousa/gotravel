@@ -2,6 +2,12 @@
 export const content = ["./src/**/*.{html,js}"];
 export const theme = {
   extend: {
+    maxHeight: {
+      '128': '28rem',
+    },
+    spacing: {
+      '128': '38.5rem',
+    }
   },
   fontSize: {
     sm: '1rem',

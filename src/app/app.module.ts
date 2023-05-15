@@ -7,7 +7,9 @@ import { NavbarComponent } from './componente/Navbar/navbar.component';
 import { HeaderComponent } from './componente/Header/header.component';
 import { PopularesComponent } from './componente/populares/populares.component';
 import { CardsComponent } from './componente/populares/Cards/cards.component';
-import { ContatoComponent } from './componente/contato/contato.component';
+import { ContatoComponent } from './componente/Contato/contato.component';
+import { JornadaComponent } from './componente/Jornada/jornada.component';
+import { FotosCardsComponent } from './componente/Jornada/fotos-cards/fotos-cards.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { ContatoComponent } from './componente/contato/contato.component';
     PopularesComponent,
     CardsComponent,
     ContatoComponent,
+    JornadaComponent,
+    FotosCardsComponent,
   ],
   imports: [
     BrowserModule,
