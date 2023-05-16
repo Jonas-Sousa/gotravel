@@ -7,6 +7,10 @@ export const theme = {
     },
     spacing: {
       '128': '38.5rem',
+    },
+    backgroundPosition: {
+      "center-4": 'top center 10rem',
+
     }
   },
   fontSize: {

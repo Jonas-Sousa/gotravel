@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { CardService } from './../../card.service';
+import { Component, Input } from '@angular/core';
+import { Card } from '../../card';
 
 @Component({
   selector: 'app-fotos-cards',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class FotosCardsComponent {
 
+  listaFotos: Card[] = []
+
+  constructor(private service: CardService) {}
+  ngOnInit(): void {
+    this.service.getLista().subscribe((listaDeFotos) => {
+      this.listaFotos = listaDeFotos
+    })
+  }
 }

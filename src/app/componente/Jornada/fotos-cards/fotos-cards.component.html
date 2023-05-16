@@ -1,59 +1,28 @@
-<section class="flex justify-between flex-wrap mx-16 mb-16 ">
-  <!-- CARD GRANDE -->
-  <div
-    style="background-image: url('../../../../assets/images/foto-teste.jpg');"
-    class=
-    "
-      mt-10
-      w-full h-96 rounded-xl
-      bg-cover bg-center
-      text-white font-bold
-      flex justify-between items-end
-    "
-  >
-  <div class="mb-16 ml-20">
-    <h2 class="text-md text-bold">TesteH2</h2>
-    <p class="text-sm opacity-90">testep</p>
-  </div>
-    <a href="" class="mb-16 mr-20">
-      <img src="../../../../assets/images/franca.png" alt="" class="w-8 h-8">
-    </a>
-  </div>
+<section class="flex justify-between flex-wrap mx-16 mb-16 mt-6">
+  <ng-container *ngFor="let item of listaFotos; let i = index">
+    <div
+      [ngStyle]="{ 'background-image': 'url(' + item.imagem + ')' }"
+      [ngClass]="{
+        'w-full ': i % 3 === 0,
+        'w-128 ': i % 3 === 1,
+        'w-6/12 ': i % 3 === 2
 
-  <!-- CARD PEQUENO -->
-  <div
-    style="background-image: url('../../../../assets/images/foto-teste.jpg');"
-    class="
-      mt-10
-      w-128 h-96 rounded-xl bg-cover
-      text-white text-bold
-      flex justify-between items-end"
-  >
-  <div class="mb-16 ml-20">
-    <h2 class="text-md text-bold">TesteH2</h2>
-    <p class="text-sm opacity-90">testep</p>
-  </div>
-    <a href="" class="mb-16 mr-20">
-      <img src="../../../../assets/images/franca.png" alt="" class="w-8 h-8">
-    </a>
-  </div>
-
-  <div
-    style="background-image: url('../../../../assets/images/foto-teste.jpg');"
-    class="
-      mt-10
-      w-128 h-96 rounded-xl bg-cover
-      text-white text-bold
-      flex justify-between items-end"
-  >
-  <div class="mb-16 ml-20">
-    <h2 class="text-md text-bold">TesteH2</h2>
-    <p class="text-sm opacity-90">testep</p>
-  </div>
-    <a href="" class="mb-16 mr-20">
-      <img src="../../../../assets/images/franca.png" alt="" class="w-8 h-8">
-    </a>
-  </div>
-
+      }"
+      class="
+        mt-6  h-80 rounded-xl
+        bg-cover bg-center
+        text-white font-bold
+        flex justify-between items-end
+      "
+    >
+      <div class="mb-16 ml-20">
+        <h2 class="text-md text-bold">{{ item.titulo }}</h2>
+        <p class="text-sm opacity-80">{{ item.subTitulo }}</p>
+      </div>
+      <a href="" class="mb-16 mr-20">
+        <img src="../../../../assets/images/franca.png" alt="" class="w-8 h-8">
+      </a>
+    </div>
+  </ng-container>
 </section>
 
