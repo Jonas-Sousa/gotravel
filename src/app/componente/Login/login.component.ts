@@ -1,18 +1,35 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit} from '@angular/core';
+import { FormBuilder, FormGroup} from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+
+export class LoginComponent implements OnInit {
+
+  formLogin!: FormGroup;
 
   constructor(
-    private router: Router
+    private formBuilder: FormBuilder
   ){}
 
-  voltar() {
-    this.router.navigate(['/home'])
+  ngOnInit(): void {
+    this.formLogin = this.formBuilder.group({
+      email: [''],
+      password: ['']
+    })
   }
+
+  salvarDados() {
+    const jsonData = {
+      dadosLogin: this.formLogin.value,
+    };
+    console.log(jsonData);
+  }
+
+
+
 }
