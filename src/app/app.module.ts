@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,6 +12,8 @@ import { CardsComponent } from './componente/populares/Cards/cards.component';
 import { ContatoComponent } from './componente/Contato/contato.component';
 import { JornadaComponent } from './componente/Jornada/jornada.component';
 import { FotosCardsComponent } from './componente/Jornada/fotos-cards/fotos-cards.component';
+import { LoginComponent } from './componente/Login/login.component';
+import { PagPrincipalComponent } from './componente/pag-principal/pag-principal.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +25,15 @@ import { FotosCardsComponent } from './componente/Jornada/fotos-cards/fotos-card
     ContatoComponent,
     JornadaComponent,
     FotosCardsComponent,
+    LoginComponent,
+    PagPrincipalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
