@@ -14,6 +14,7 @@ import { JornadaComponent } from './componente/Jornada/jornada.component';
 import { FotosCardsComponent } from './componente/Jornada/fotos-cards/fotos-cards.component';
 import { LoginComponent } from './componente/Login/login.component';
 import { PagPrincipalComponent } from './componente/pag-principal/pag-principal.component';
+import { CadastrarComponent } from './componente/Cadastrar/cadastrar.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { PagPrincipalComponent } from './componente/pag-principal/pag-principal.
     FotosCardsComponent,
     LoginComponent,
     PagPrincipalComponent,
+    CadastrarComponent,
   ],
   imports: [
     BrowserModule,

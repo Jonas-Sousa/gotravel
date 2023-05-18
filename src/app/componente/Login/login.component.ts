@@ -48,6 +48,9 @@ export class LoginComponent implements OnInit {
     return emailControl?.invalid && emailControl?.touched;
   }
 
+  cadastrar() {
+    
+  }
 
 
 
