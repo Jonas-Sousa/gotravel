@@ -1,3 +1,4 @@
+import { CadastrarComponent } from './componente/Cadastrar/cadastrar.component';
 import { LoginComponent } from './componente/Login/login.component';
 import { PagPrincipalComponent } from './componente/pag-principal/pag-principal.component';
 import { NgModule } from '@angular/core';
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'cadastrar',
+    component: CadastrarComponent
   }
 ];
 
