@@ -21,19 +21,18 @@ export class LoginComponent implements OnInit {
       email: ['', Validators.compose([
         Validators.required,
         Validators.email
-
       ])],
       password: ['', Validators.required
       ]
     })
   }
 
-  salvarDados() {
-    console.log(this.formLogin.get('email')?.errors);
+  salvarLogin() {
     if(this.formLogin.valid == true){
       const jsonData = {
         dadosLogin: this.formLogin.value,
       };
+      this.formLogin.reset()
       console.log(jsonData);
     }
   }
@@ -47,11 +46,6 @@ export class LoginComponent implements OnInit {
     const emailControl = this.formLogin.get('email');
     return emailControl?.invalid && emailControl?.touched;
   }
-
-  cadastrar() {
-    
-  }
-
 
 
 }

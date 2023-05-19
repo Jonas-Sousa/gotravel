@@ -4,14 +4,15 @@
   <div class="rounded-md flex pl-12">
     <div class="flex flex-col items-center mt-8 h-screen w-128">
       <h1>Welcome to gotravel</h1>
-      <form  class="mt-8 w-96">
+      <form  class="mt-8 w-96" [formGroup]="formCadastrar">
         <label for="" class="text-md">
           Nome completo
         </label>
         <input
           type="text"
           id="text"
-          placeholder="Exemplo@gmail.com"
+          formControlName="nomeCompleto"
+          placeholder="Nome completo"
           class="
             mt-1 px-3 py-2 w-full mb-4
             bg-white border shadow-sm border-slate-300
@@ -26,6 +27,7 @@
         <input
           type="date"
           id="date"
+          formControlName="dataDeNascimento"
           placeholder="Exemplo@gmail.com"
           class="
             mt-1 px-3 py-2 w-full mb-4
@@ -41,6 +43,7 @@
         <input
           type="email"
           id="email"
+          formControlName="email"
           placeholder="Exemplo@gmail.com"
           class="
             mt-1 px-3 py-2 w-full mb-4
@@ -57,7 +60,6 @@
           type="password"
           formControlName="password"
           id="password"
-
           placeholder="Sua senha"
           class="
             mt-1 px-3 py-2
@@ -69,6 +71,7 @@
         >
       </form>
       <button
+      (click)="salvarCadastro()"
         class=
           "
             mt-8
