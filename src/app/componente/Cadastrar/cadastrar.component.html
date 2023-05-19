@@ -7,7 +7,20 @@
       <form  class="mt-8 w-96" [formGroup]="formCadastrar">
         <label for="" class="text-md">
           Nome completo
+          <span [ngClass]="{'text-red-600': isNomeInvalid()}">*</span>
         </label>
+        <div
+          class="text-sm text-red-600"
+          *ngIf="formCadastrar.get('nomeCompleto')?.errors"
+        >
+          <div *ngIf="formCadastrar.get('nomeCompleto')?.hasError('required') &&
+          formCadastrar.get('nomeCompleto')?.touched">
+          <p>Nome completo é obrigatório</p>
+          </div>
+          <div *ngIf="formCadastrar.get('nomeCompleto')?.hasError('pattern')">
+            <p>Nome e Sobrenome(com a primeira letra maiúscula)</p>
+          </div>
+        </div>
         <input
           type="text"
           id="text"
@@ -23,7 +36,23 @@
         >
         <label for="" class="text-md">
           Data de Nascimento
+          <span [ngClass]="{'text-red-600': isDataInvalid()}">*</span>
         </label>
+        <div
+          class="text-sm text-red-600"
+          *ngIf="formCadastrar.get('dataDeNascimento')?.errors"
+        >
+          <div *ngIf="formCadastrar.get('dataDeNascimento')?.hasError('required') &&
+          formCadastrar.get('dataDeNascimento')?.touched">
+            <p>Campo obrigatório</p>
+          </div>
+          <div *ngIf="formCadastrar.get('dataDeNascimento')?.hasError('invalidMax')">
+            <p>Nasceu no futuro? Data inválida</p>
+          </div>
+          <div *ngIf="formCadastrar.get('dataDeNascimento')?.hasError('invalidMin')">
+            <p>Muito velho!! Data inválida</p>
+          </div>
+        </div>
         <input
           type="date"
           id="date"
@@ -39,7 +68,21 @@
         >
         <label for="" class="text-md">
           E-mail
+          <span [ngClass]="{'text-red-600': isEmailInvalid()}">*</span>
         </label>
+        <div
+          class="text-sm text-red-600"
+          *ngIf="formCadastrar.get('email')?.errors?.['required'] &&
+          formCadastrar.get('email')?.touched"
+        >
+          <p>Email é obrigatório</p>
+        </div>
+        <div
+          class="text-sm text-red-600"
+          *ngIf="formCadastrar.get('email')?.errors?.['email']"
+        >
+          <p>Insira um endereço de e-mail válido.</p>
+        </div>
         <input
           type="email"
           id="email"
@@ -55,7 +98,15 @@
         >
         <label for="" class="text-md">
           Password
+          <span [ngClass]="{'text-red-600': isPasswordInvalid()}">*</span>
         </label>
+        <div
+          class="text-sm text-red-600"
+          *ngIf="formCadastrar.get('password')?.errors?.['required'] &&
+          formCadastrar.get('password')?.touched"
+        >
+          <p>Senha é obrigatória</p>
+        </div>
         <input
           type="password"
           formControlName="password"
@@ -95,7 +146,7 @@
         "
       >
         <div class="m-16">
-          <h2 class="text-xll text-bold">Pariz</h2>
+          <h2 class="text-xll text-bold">Paris</h2>
           <p class="text-sm text-bold opacity-90">França</p>
         </div>
       </div>

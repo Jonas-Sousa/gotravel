@@ -32,7 +32,6 @@ export class CadastrarComponent implements OnInit{
         (control) => {
           const value = control.value;
           if (value) {
-            const today = new Date();
             const birthDate = new Date(value);
             const isValidDate = !isNaN(birthDate.getTime());
 
@@ -43,8 +42,11 @@ export class CadastrarComponent implements OnInit{
             const minDate = new Date("1900-01-01");
             const maxDate = new Date();
 
-            if (birthDate < minDate || birthDate > maxDate) {
-              return { invalidRange: true };
+            if (birthDate > maxDate) {
+              return { invalidMax: true };
+            }
+            if (birthDate < minDate ) {
+              return { invalidMin: true };
             }
           }
           return null;
@@ -57,6 +59,26 @@ export class CadastrarComponent implements OnInit{
       password: ['', Validators.required]
     })
 
+  }
+
+  isNomeInvalid() {
+    const passwordControl = this.formCadastrar.get('nomeCompleto');
+    return passwordControl?.invalid && passwordControl?.touched;
+  }
+
+  isDataInvalid() {
+    const passwordControl = this.formCadastrar.get('dataDeNascimento');
+    return passwordControl?.invalid && passwordControl?.touched;
+  }
+
+  isPasswordInvalid() {
+    const passwordControl = this.formCadastrar.get('password');
+    return passwordControl?.invalid && passwordControl?.touched;
+  }
+
+  isEmailInvalid() {
+    const emailControl = this.formCadastrar.get('email');
+    return emailControl?.invalid && emailControl?.touched;
   }
 
   salvarCadastro(){
