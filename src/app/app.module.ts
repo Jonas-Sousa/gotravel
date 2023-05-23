@@ -1,3 +1,6 @@
+import { CardService } from './service/card.service';
+import { AuthService } from 'src/app/service/auth.service';
+import { UserService } from './service/user.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -37,7 +40,7 @@ import { CadastrarComponent } from './componente/Cadastrar/cadastrar.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService,CardService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

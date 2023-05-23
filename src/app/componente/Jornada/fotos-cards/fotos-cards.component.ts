@@ -1,6 +1,6 @@
-import { CardService } from './../../card.service';
+import { CardService } from '../../../service/card.service';
 import { Component, Input } from '@angular/core';
-import { Card } from '../../card';
+import { Card } from '../../../model/card.model';
 
 @Component({
   selector: 'app-fotos-cards',

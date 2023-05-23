@@ -1,5 +1,7 @@
+import { Router } from '@angular/router';
 import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/service/auth.service';
 
 
 @Component({
@@ -12,8 +14,11 @@ export class LoginComponent implements OnInit {
 
   formLogin!: FormGroup;
 
+
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private router: Router,
   ){}
 
   ngOnInit(): void {
@@ -25,16 +30,38 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required
       ]
     })
+    console.log(localStorage.getItem('users'));
+
   }
 
   salvarLogin() {
+
+    let dataLogin = this.formLogin.value
+
     if(this.formLogin.valid == true){
-      const jsonData = {
-        dadosLogin: this.formLogin.value,
-      };
-      this.formLogin.reset()
-      console.log(jsonData);
+      this.authService.login(dataLogin)
+      .subscribe( dataServer => {
+        if (dataServer.length > 0){
+          if (dataLogin.password === dataServer[0].password){
+            dataServer[0].password = '';
+            localStorage.setItem('users', JSON.stringify(dataServer[0]))
+            this.router.navigate(['home'])
+          }else {
+            alert('Usuário ou Senha inválida')
+          }
+        }else{
+          alert('Usuário ou Senha inválida')
+        }
+      })
+      this.formLogin.reset();
+
     }
+
+  }
+
+  teste() {
+    let dataLoginNome = localStorage.getItem('users.nome')
+
   }
 
   isPasswordInvalid() {
