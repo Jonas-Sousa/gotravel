@@ -34,13 +34,32 @@
         Galery
       </a>
     </li>
-    <li>
+
+    <li *ngIf="!authService.isAuthenticated()">
       <a
         routerLink="/login"
         class="hover:underline underline-offset-1"
       >
         Sing in
-      </a >
+      </a>
+    </li>
+    <li *ngIf="authService.isAuthenticated()">
+      <button
+        (click)="mostrarDropdown = !mostrarDropdown"
+        class="hover:underline underline-offset-1 text-black-700">
+        {{ userName }}
+      </button>
+      <div
+        [ngClass]="{'hidden': !mostrarDropdown}"
+        class="absolute hidden py-2  rounded shadow-lg">
+        <a
+          (click)="sair()"
+          href="#"
+          class="block py-2 px-2 w-12 text-gray-800 bg-gray-200 "
+        >
+          Sair
+        </a>
+      </div>
     </li>
   </ul>
 </nav>

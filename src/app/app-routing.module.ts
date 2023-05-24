@@ -1,3 +1,4 @@
+import { AuthGuard } from './guard/auth-guard.guard';
 import { CadastrarComponent } from './componente/Cadastrar/cadastrar.component';
 import { LoginComponent } from './componente/Login/login.component';
 import { PagPrincipalComponent } from './componente/pag-principal/pag-principal.component';
@@ -8,7 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    component: PagPrincipalComponent,
+    component: PagPrincipalComponent
   },
   {
     path: '',
@@ -21,7 +22,8 @@ const routes: Routes = [
   },
   {
     path: 'cadastrar',
-    component: CadastrarComponent
+    component: CadastrarComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
