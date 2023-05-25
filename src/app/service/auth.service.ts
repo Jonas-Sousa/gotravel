@@ -16,9 +16,10 @@ export class AuthService {
   login(values: {email: string, password: string}) {
     return this.http.get<User[]>(`${API}/users?email_like=` + values.email)
   }
-
-
-
+  
+  cadastrar(user: User) {
+    return this.http.post<User>(`${API}/users`,user)
+  }
 
   clear() {
     localStorage.clear()
@@ -32,12 +33,10 @@ export class AuthService {
     this.clear()
   }
 
-  cadastrar(user: User) {
-    return this.http.post<User>(`${API}/users`,user)
-  }
+
 
   nome(values: {name: string}){
-      
+
     return  this.http.get<User[]>(`${API}/users?name_like=` + values.name)
   }
 

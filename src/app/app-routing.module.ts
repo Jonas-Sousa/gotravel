@@ -23,7 +23,7 @@ const routes: Routes = [
   {
     path: 'cadastrar',
     component: CadastrarComponent,
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   }
 ];
 

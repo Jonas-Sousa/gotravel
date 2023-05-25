@@ -59,11 +59,6 @@ export class LoginComponent implements OnInit {
 
   }
 
-  teste() {
-    let dataLoginNome = localStorage.getItem('users.nome')
-
-  }
-
   isPasswordInvalid() {
     const passwordControl = this.formLogin.get('password');
     return passwordControl?.invalid && passwordControl?.touched;
