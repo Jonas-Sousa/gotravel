@@ -1,5 +1,7 @@
+import { AuthService } from 'src/app/service/auth.service';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,13 +19,19 @@ export class CadastrarComponent implements OnInit{
 
 
   constructor(
-    private formbuilder: FormBuilder
-    
+    private formbuilder: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+
   ){}
 
   ngOnInit(): void {
     this.formCadastrar = this.formbuilder.group({
-      nomeCompleto:['',Validators.compose([
+      name:['',Validators.compose([
+        Validators.required,
+        Validators.pattern(/^[A-Z][a-z]*$/)
+      ])],
+      sobrenome:['',Validators.compose([
         Validators.required,
         Validators.pattern(/^[A-Z][a-zA-Z ]+( [a-zA-Z]+)+$/)
       ])],
@@ -59,11 +67,11 @@ export class CadastrarComponent implements OnInit{
       ])],
       password: ['', Validators.required]
     })
-
+    console.log(localStorage.getItem('users'));
   }
 
   isNomeInvalid() {
-    const passwordControl = this.formCadastrar.get('nomeCompleto');
+    const passwordControl = this.formCadastrar.get('name');
     return passwordControl?.invalid && passwordControl?.touched;
   }
 
@@ -83,17 +91,19 @@ export class CadastrarComponent implements OnInit{
   }
 
   salvarCadastro(){
+
+    let dataCadastro = JSON.parse(JSON.stringify(this.formCadastrar.value))
+
     if(this.formCadastrar.valid == true){
-      const jsonData = {
-        dadosCadastro: this.formCadastrar.value,
-      };
-      this.formCadastrar.reset()
-      console.log(jsonData);
+      this.authService.cadastrar(dataCadastro).subscribe(
+        dataServer => {
+          dataServer.password = '';
+          localStorage.setItem('users', JSON.stringify(dataServer))
+          this.router.navigate(['home'])
+          alert("Usuário cadastrado com sucesso")
+          this.formCadastrar.reset();
+      });
     }
   }
 
 }
-
-
-
-

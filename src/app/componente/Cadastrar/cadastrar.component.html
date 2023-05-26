@@ -2,30 +2,59 @@
 <section class="flex justify-center my-16 mx-16"
 >
   <div class="rounded-md flex pl-12">
-    <div class="flex flex-col items-center mt-8 h-screen w-128">
+    <div class="flex flex-col items-center mt-2 h-screen w-128">
       <h1>Welcome to gotravel</h1>
       <form  class="mt-8 w-96" [formGroup]="formCadastrar">
         <label for="" class="text-md">
-          Nome completo
+          Nome
           <span [ngClass]="{'text-red-600': isNomeInvalid()}">*</span>
         </label>
         <div
           class="text-sm text-red-600"
-          *ngIf="formCadastrar.get('nomeCompleto')?.errors"
+          *ngIf="formCadastrar.get('name')?.errors"
         >
-          <div *ngIf="formCadastrar.get('nomeCompleto')?.hasError('required') &&
-          formCadastrar.get('nomeCompleto')?.touched">
-          <p>Nome completo é obrigatório</p>
+          <div *ngIf="formCadastrar.get('name')?.hasError('required') &&
+          formCadastrar.get('name')?.touched">
+          <p>Nome é obrigatório</p>
           </div>
-          <div *ngIf="formCadastrar.get('nomeCompleto')?.hasError('pattern')">
-            <p>Nome e Sobrenome(com a primeira letra maiúscula)</p>
+          <div *ngIf="formCadastrar.get('name')?.hasError('pattern')">
+            <p>Primeiro nome (a primeira letra maiúscula)</p>
           </div>
         </div>
         <input
           type="text"
           id="text"
-          formControlName="nomeCompleto"
-          placeholder="Nome completo"
+          formControlName="name"
+          placeholder="Nome"
+          class="
+            mt-1 px-3 py-2 w-full mb-4
+            bg-white border shadow-sm border-slate-300
+            placeholder-slate-400
+            focus:outline-none focus:border-orange-500 focus:ring-orange-500
+            block w-full rounded-md sm:text-sm focus:ring-1
+          "
+        >
+        <label for="" class="text-md">
+          Sobrenome
+          <span [ngClass]="{'text-red-600': isNomeInvalid()}">*</span>
+        </label>
+        <div
+          class="text-sm text-red-600"
+          *ngIf="formCadastrar.get('sobrenome')?.errors"
+        >
+          <div *ngIf="formCadastrar.get('sobrenome')?.hasError('required') &&
+          formCadastrar.get('sobrenome')?.touched">
+          <p>Sobrenome é obrigatório</p>
+          </div>
+          <div *ngIf="formCadastrar.get('sobrenome')?.hasError('pattern')">
+            <p>Sobrenome(com a primeira letra maiúscula)</p>
+          </div>
+        </div>
+        <input
+          type="text"
+          id="text"
+          formControlName="sobrenome"
+          placeholder="Sobrenome"
           class="
             mt-1 px-3 py-2 w-full mb-4
             bg-white border shadow-sm border-slate-300

@@ -1,3 +1,4 @@
+
 import { CardService } from './service/card.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { UserService } from './service/user.service';
@@ -5,8 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './componente/Navbar/navbar.component';
 import { HeaderComponent } from './componente/Header/header.component';

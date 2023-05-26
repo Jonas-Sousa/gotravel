@@ -15,5 +15,17 @@ export class UserService {
     return null;
   }
 
+  getUserEmail(): string | null {
+    const usersJson = localStorage.getItem('users');
+    if (usersJson) {
+      const users = JSON.parse(usersJson);
+      const name = users.email;
+
+      return name;
+    }
+
+    return null;
+  }
+
 
 }

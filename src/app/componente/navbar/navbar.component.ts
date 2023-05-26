@@ -1,5 +1,5 @@
-import { UserService } from './../../service/user.service';
-import { AuthService } from './../../service/auth.service';
+import { UserService } from '../../service/user.service';
+import { AuthService } from '../../service/auth.service';
 import { Component, HostBinding,} from '@angular/core';
 
 @Component({
@@ -13,6 +13,7 @@ export class NavbarComponent {
 
   mostrarDropdown: boolean = false;
   userName: string | null;
+  userEmail: string | null;
   static atualizarNavbarEvent: any;
 
   constructor(
@@ -20,6 +21,7 @@ export class NavbarComponent {
     private userService: UserService,
 ) {
       this.userName = this.userService.getUserName()
+      this.userEmail = this.userService.getUserEmail()
 
   }
 
