@@ -1,4 +1,4 @@
-<nav class="text-sm mx-16 pt-10 flex flex-row justify-between">
+<nav class="text-sm mx-16 pt-8 flex flex-row justify-between items-center">
   <div class="icon-logo">
     <a
       routerLink=""
@@ -7,7 +7,7 @@
       GoTravel
     </a>
   </div>
-  <ul class="nav-links flex flex-row space-x-8 ">
+  <ul class="nav-links flex flex-row items-center space-x-8 ">
     <li>
       <a
         class="hover:underline underline-offset-1"
@@ -43,19 +43,38 @@
         Sing in
       </a>
     </li>
-    <li *ngIf="authService.isAuthenticated()">
-      <button
-        (click)="mostrarDropdown = !mostrarDropdown"
-        class="hover:underline underline-offset-1 text-black-700">
-        {{ userName }}
-      </button>
+    <li *ngIf="authService.isAuthenticated()" class="flex">
+      <div (click)="mostrarDropdown = !mostrarDropdown" class="flex">
+
+        <div
+          style="background-image: url(../../../assets/images/doidao.jpg);"
+          class=
+          "
+            bg-cover bg-center
+            w-12 h-12 mr-2 mt-2
+            rounded-full
+          "
+        >
+        </div>
+        <div class="flex flex-col items-start mt-2">
+
+          <div
+            class="hover:underline underline-offset-1 text-black-700">
+            {{ userName }}
+          </div>
+          <div class="opacity-75 text-smm">
+            {{ userEmail }}
+          </div>
+        </div>
+      </div>
+
       <div
         [ngClass]="{'hidden': !mostrarDropdown}"
-        class="absolute hidden py-2  rounded shadow-lg">
+        class="absolute hidden py-16 mx-20 rounded shadow-lg">
         <a
           (click)="sair()"
           href="#"
-          class="block py-2 px-2 w-12 text-gray-800 bg-gray-200 "
+          class="block py-2 px-2 w-12 text-white "
         >
           Sair
         </a>
