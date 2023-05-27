@@ -31,15 +31,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/tailwindcss/tailwind.css",
-              {
-                "input": "node_modules/@fullhuman/postcss-purgecss",
-                "options": {
-                  "content": [
-                    "./src/**/*.{html,ts}"
-                  ]
-                }
-              }
+              "node_modules/tailwindcss/tailwind.css"
             ],
             "scripts": []
           },
