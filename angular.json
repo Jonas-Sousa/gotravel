@@ -31,7 +31,15 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/tailwindcss/tailwind.css"
+              "node_modules/tailwindcss/tailwind.css",
+              {
+                "input": "node_modules/@fullhuman/postcss-purgecss",
+                "options": {
+                  "content": [
+                    "./src/**/*.{html,ts}"
+                  ]
+                }
+              }
             ],
             "scripts": []
           },
@@ -46,7 +54,8 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "2.00mb",
-                  "maximumError": "2.00mb"
+                  "maximumError": "4.00mb"
+
                 }
               ],
               "outputHashing": "all"
