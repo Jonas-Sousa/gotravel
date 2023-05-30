@@ -1,13 +1,13 @@
-import { UserService } from '../../service/user.service';
-import { AuthService } from '../../service/auth.service';
+import { UserService } from './../../service/user.service';
+import { AuthService } from 'src/app/service/auth.service';
 import { Component, HostBinding,} from '@angular/core';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  selector: 'app-nav',
+  templateUrl: './nav.component.html',
+  styleUrls: ['./nav.component.scss']
 })
-export class NavbarComponent {
+export class NavComponent {
 
   @HostBinding('class') classes = '';
 
@@ -19,7 +19,7 @@ export class NavbarComponent {
   constructor(
     public authService: AuthService,
     private userService: UserService,
-) {
+  ) {
       this.userName = this.userService.getUserName()
       this.userEmail = this.userService.getUserEmail()
 
@@ -28,7 +28,6 @@ export class NavbarComponent {
   sair() {
     this.authService.logout()
   }
-
 
 
 }
