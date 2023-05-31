@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContatoComponent } from './contato.component';
+import { VideoComponent } from './video.component';
 
-describe('ContatoComponent', () => {
-  let component: ContatoComponent;
-  let fixture: ComponentFixture<ContatoComponent>;
+describe('VideoComponent', () => {
+  let component: VideoComponent;
+  let fixture: ComponentFixture<VideoComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ContatoComponent]
+      declarations: [VideoComponent]
     });
-    fixture = TestBed.createComponent(ContatoComponent);
+    fixture = TestBed.createComponent(VideoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
