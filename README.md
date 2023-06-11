@@ -72,8 +72,8 @@ $ ng serve
  
  
  ## 💡Novas features
-⭕ Integração com backend para validação de login
-⭕ Página de galeria para envio e salvamento de fotos
-⭕ Página de Destinos com os destinos mais populares do site
-⭕ Melhorias na página inicial para uma experiência aprimorada
+⭕ Integração com backend para validação de login<br>
+⭕ Página de galeria para envio e salvamento de fotos<br>
+⭕ Página de Destinos com os destinos mais populares do site<br>
+⭕ Melhorias na página inicial para uma experiência aprimorada<br>
 ⭕ Testes unitários para garantir a qualidade do código
