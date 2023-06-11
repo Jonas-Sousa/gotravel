@@ -1,9 +1,9 @@
-# Projeto Gotravel
+# Projeto Gotravel  
 
 ![fotoExemplo](./src/assets/images/gotravelCabecalho.png)
 
 O projeto Gotravel é um site para conhecer diferentes lugares incríveis do mundo, aonde você poderá adicionnar suas fotos de lugares e salvar suas fotos ou albuns favoritos.
-
+## 🚧Em Desenvolvimento🚧
 ## 📌Índice 
 - <a href="#tecnologias-utilizadas">Tecnologias utilizadas</a>
 - <a href="#proposito">Propósito</a>
