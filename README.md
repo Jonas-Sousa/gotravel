@@ -1,9 +1,10 @@
+## 🚧Em Desenvolvimento🚧
 # Projeto Gotravel  
 
 ![fotoExemplo](./src/assets/images/gotravelCabecalho.png)
 
 O projeto Gotravel é um site para conhecer diferentes lugares incríveis do mundo, aonde você poderá adicionnar suas fotos de lugares e salvar suas fotos ou albuns favoritos.
-## 🚧Em Desenvolvimento🚧
+
 ## 📌Índice 
 - <a href="#tecnologias-utilizadas">Tecnologias utilizadas</a>
 - <a href="#proposito">Propósito</a>
@@ -16,15 +17,23 @@ O projeto Gotravel é um site para conhecer diferentes lugares incríveis do mun
 
 ## 📱Tecnologias utilizadas
 1. [Angular](https://angular.io/cli)
+2. [Auth Guard](https://angular.io/api/router/CanActivate)
+3. [Router](https://angular.io/guide/router)
+4. [Observables](https://angular.io/guide/observables)
 
 ## 🎯Propósito
+O propósito deste meu projeto pessoal é aprofundar meu conhecimento no framework Angular, construindo uma aplicação próxima a um projeto real, com o objetivo de explorar e dominar todas as funcionalidades do Angular ao desenvolver um site completo.
+
+Até o momento, já desenvolvi a página inicial, o login e o cadastro. A página de login e cadastro estão funcionais, permitindo que os usuários se cadastrem e façam login. No entanto, vale ressaltar que o sistema de login atual é apenas simulado, uma vez que os dados são armazenados localmente e ainda não há interação com um backend para realizar as validações necessárias. Estou trabalhando nessa implementação e essa funcionalidade estará disponível nas próximas atualizações do site, juntamente com outras funcionalidades e seções, como a página de galeria (onde os usuários poderão enviar e salvar fotos) e a página de Destinos (onde serão exibidos os destinos mais populares do site).
+
+Com este projeto, estou comprometido em aprimorar minhas habilidades no Angular e desenvolver uma aplicação completa, proporcionando uma experiência prática e próxima do mundo real.
 
 ## 🖥Funcionalidades do Projeto
 
-✔ <br>
-✔ <br>
-✔ <br>
-
+✔ Tela principal<br>
+✔ Tela de cadastro (você poode realmente se cadastrar)<br>
+✔ Tela de login (você poode logar no site)<br>
+✔ Seu usuário fica exibido no lado superior direito do site
 
 ## 🧩Layout
 ![fotoExemplo](./src/assets/images/userLogin.png)
@@ -63,8 +72,8 @@ $ ng serve
  
  
  ## 💡Novas features
-- [ ] Feature nova 1
-- [ ] Feature nova 2
-- [ ] Feature nova 3
-- [ ] Feature nova 4
-- [ ] Feature nova 5
+⭕ Integração com backend para validação de login
+⭕ Página de galeria para envio e salvamento de fotos
+⭕ Página de Destinos com os destinos mais populares do site
+⭕ Melhorias na página inicial para uma experiência aprimorada
+⭕ Testes unitários para garantir a qualidade do código
